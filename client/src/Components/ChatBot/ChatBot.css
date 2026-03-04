@@ -1,0 +1,36 @@
+.chatbot_wrapper {
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  z-index: 999;
+  display: none;
+}
+
+#click:checked ~ .chatbot_wrapper {
+  display: block;
+}
+
+.chat_label {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  background-color: #25d366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 24px;
+}
+
+.chat_label .fa-times {
+  display: none;
+}
+
+#click:checked + .chat_label .fa-facebook-messenger {
+  display: none;
+}
+
+#click:checked + .chat_label .fa-times {
+  display: inline;
+}
