@@ -28,7 +28,7 @@ module.exports.login_post = async (req, res) => {
                 }
             } else {
                 console.log('Invalid email or username')
-                return res.json("error")
+                return res.json({ msg: "error" })
             }
         }
     } catch (err) {

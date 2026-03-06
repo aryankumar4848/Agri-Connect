@@ -1,27 +1,23 @@
 const { createClient } = require('redis');
 
+// Create Redis client with fallback URL
 const client = createClient({
-    username: 'default',
-    password: 'oYjEJ3sZ93AsomY0rfnvxIxJK2MJ1vdM',
-    socket: {
-        host: 'redis-12092.crce179.ap-south-1-1.ec2.redns.redis-cloud.com',
-        port: 12092
-    }
+    url: process.env.REDIS_URL || 'redis://127.0.0.1:6379',
 });
 
-client.on('error', err => console.log('Redis Client Error', err));
+client.on('error', (err) => {
+    // Log error but do not crash the application
+    console.error('Redis Client Error:', err.message);
+});
 
+// Connect to Redis without blocking the rest of the app. If connection fails, the client will remain disconnected.
 (async () => {
     try {
         await client.connect();
         console.log('Redis client connected');
-
-        // Test Redis connection
-        await client.set('foo', 'bar');
-        const result = await client.get('foo');
-        console.log(result); // >>> bar
-    } catch (error) {
-        console.error('Error connecting to Redis:', error);
+    } catch (err) {
+        console.error('Failed to connect to Redis:', err.message);
+        // Continue without Redis; dependent code should handle missing cache gracefully.
     }
 })();
 

@@ -10,8 +10,44 @@ server/build/
 
 # Environment variables
 .env
+.env.local
+.env.development
+.env.production
 client/.env
+client/.env.local
+client/.env.development
+client/.env.production
 server/.env
+server/.env.local
+server/.env.development
+server/.env.production
 
 # Logs
 *.log
+logs/
+server/logs/
+server/**/*.log
+
+# Uploads (user uploaded images)
+server/uploads/
+server/uploads/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+client/coverage/
+
+# Misc
+*.tmp
+*.temp
+.cache/

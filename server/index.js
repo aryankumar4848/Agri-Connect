@@ -135,6 +135,7 @@ app.post('/payments/razorpay/create-link', async (req, res) => {
       referenceId,
     });
   } catch (error) {
+    console.error("Razorpay Error:", error);
     return res.status(500).json({
       message: 'Failed to create Razorpay payment link.',
       error: error.message,

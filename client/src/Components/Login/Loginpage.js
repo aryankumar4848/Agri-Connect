@@ -1,17 +1,18 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
   const navigate = useNavigate()
   const [details, setDetails] = useState({})
+  const [errorMsg, setErrorMsg] = useState("")
 
-  useEffect(()=>{
-    if(localStorage.getItem('email')){
+  useEffect(() => {
+    if (localStorage.getItem('email')) {
       navigate('/dashboard')
     }
-  },[])
+  }, [])
 
   const handleChange = (e) => {
     setDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -30,7 +31,7 @@ const SignUp = (props) => {
           // props.onUserLogin(details.email.slice(0,details.email.indexOf('@')))
           localStorage.setItem('email', details.email)
           props.onUserLogin(details.email)
-          window.location.href="/adminportal"
+          window.location.href = "/adminportal"
           // navigate('/adminportal')
         }
         else if (result.msg === 'user') {
@@ -40,14 +41,14 @@ const SignUp = (props) => {
           // props.onUserLogin(details.email.slice(0,details.email.indexOf('@')))
           // props.onUserLogin(details.name)
           // navigate('/dashboard')
-          window.location.href='/dashboard'
+          window.location.href = '/dashboard'
         }
         else {
-          navigate('/login')
+          setErrorMsg('Invalid email or password')
         }
       })
       .catch(err => {
-        navigate('/login')
+        setErrorMsg('Error connecting to the server')
         console.log(err)
       })
   }
@@ -63,6 +64,7 @@ const SignUp = (props) => {
                 <div className="loginform-left">
                   <h1 className="loginform-title">Welcome!</h1>
                   <p className="loginform-desc">Access your smart farming workspace</p>
+                  {errorMsg && <p className="form-error" style={{ marginBottom: "10px", textAlign: "center" }}>{errorMsg}</p>}
                   <form onSubmit={(e) => e.preventDefault()}>
                     <div className="input-block">
                       <label htmlFor="email" className="input-label">Email</label>

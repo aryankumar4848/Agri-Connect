@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Signuppage = (props) => {
   const navigate = useNavigate()
   const [details, setDetails] = useState({})
+  const [errorMsg, setErrorMsg] = useState("")
 
   const handleChange = (e) => {
     setDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -18,24 +19,23 @@ const Signuppage = (props) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(details),
     })
-    .then(res => res.json())
-    .then(result => {
-      if(result.msg ==='err'){
-        navigate('/signup')
-      }
-      else{
-        // props.onUserLogin(details.name)
-        // localStorage.setItem('username',details.email.slice(0,details.email.indexOf('@')))
-        localStorage.setItem('email', details.email)
-        props.onUserLogin(details.email)
-        // navigate('/adminportal')
-        window.location.href='/adminportal'
-      }
-    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.msg === 'err') {
+          setErrorMsg('Registration failed')
+        }
+        else {
+          // props.onUserLogin(details.name)
+          // localStorage.setItem('username',details.email.slice(0,details.email.indexOf('@')))
+          localStorage.setItem('email', details.email)
+          props.onUserLogin(details.email)
+          // navigate('/adminportal')
+          window.location.href = '/adminportal'
+        }
+      })
       .catch(err => {
-        // navigate('/signup')
-        window.location.href='/signup'
-        console.log(err)  
+        setErrorMsg('Error connecting to the server')
+        console.log(err)
       })
   }
 
@@ -49,6 +49,7 @@ const Signuppage = (props) => {
               <div className="loginform-left">
                 <h1 className="loginform-title">Welcome!</h1>
                 <p className="loginform-desc">Create your account to start managing farm operations</p>
+                {errorMsg && <p className="form-error" style={{ marginBottom: "10px", textAlign: "center" }}>{errorMsg}</p>}
                 <form onSubmit={(e) => e.preventDefault()}>
                   <div className="input-block">
                     <label htmlFor="name" className="input-label">Name</label>
