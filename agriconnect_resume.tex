@@ -1,0 +1,189 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-3pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.12in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+%-------------------------------------------
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape ARYAN KUMAR} \\ \vspace{2pt}
+    \small 
+    \faPhone\ +91 99721 19604 $|$
+    \href{mailto:aryantk4848@gmail.com}{aryantk4848@gmail.com} $|$
+    \href{https://linkedin.com/in/aryan-tk/}{linkedin.com/in/aryan-tk} $|$
+    \href{https://github.com/aryankumar4848}{github.com/aryankumar4848}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\resumeSubHeadingListStart
+\resumeItem{
+Final-year Computer Science undergraduate with strong foundations in Data Structures, Operating Systems, and Networking. Experienced in designing concurrent, ACID-compliant backend systems and containerized microservices using \textbf{Java, Spring Boot, PostgreSQL, and Docker}.
+}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {M. S. Ramaiah Institute of Technology}{Bangalore, India}
+    {B.E. in Computer Science Engineering (CGPA: 8.68)}{2022 - 2026}
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Full Stack Developer Intern}{Bangalore, India}
+    {Ramaiah Institute of Technology}{}
+    \resumeItemListStart
+    \resumeItem{Engineered a MERN-based booking system by implementing JWT-based RBAC and atomic slot validation logic, eliminating 100\% double-booking across 5,000+ simulated reservations.}
+    \resumeItem{Improved database performance by introducing indexed MongoDB queries and benchmarking execution paths, increasing retrieval speed by 3x over 5k+ records.}
+    \resumeItem{Accelerated release cycles by automating CI pipelines using GitHub Actions, reducing deployment time by 60\% (20 min → 8 min).}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+  {\textbf{Fintech Ledger \& Payments API Platform}
+  \href{https://github.com/aryankumar4848/fintech-ledger}{\faIcon{external-link-alt}}
+  $|$ \emph{Java, Spring Boot, PostgreSQL}}{}
+  \resumeItemListStart
+    \resumeItem{Built an ACID-compliant ledger API by implementing transaction isolation and row-level locking, ensuring 100\% consistency across deposit, withdrawal, and transfer operations.}
+    \resumeItem{Eliminated duplicate financial transactions by designing idempotency-key validation, maintaining 0\% duplication across 1,000+ concurrent requests.}
+    \resumeItem{Optimized API throughput using cursor-based pagination and query tuning, reducing response payload size by 90\% under load testing.}
+  \resumeItemListEnd
+
+   \resumeProjectHeading
+    {\textbf{Microservice-based Event Booking System}
+    \href{https://github.com/aryankumar4848/event-driven-ticket-booking-microservice}{\faIcon{external-link-alt}}
+    $|$ \emph{Spring Boot, PostgreSQL, Docker}}{}
+    \resumeItemListStart
+    \resumeItem{Designed a 3-service microservices architecture (User, Event, Booking) enabling modular deployment and service isolation.}
+    \resumeItem{Prevented 100\% seat double-booking under concurrency using transactional database locking and consistency checks.}
+    \resumeItem{Validated system scalability using JMeter with 150+ concurrent users, maintaining stable response latency and zero booking conflicts.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+{\textbf{MBTI Cognitive Chatbot (AI Personality Inference System)}
+\href{https://github.com/aryankumar4848/mbti-chatbot}{\faIcon{external-link-alt}}
+$|$ \emph{React, Node.js, Python, Docker}}{}
+\resumeItemListStart
+\resumeItem{Built a full-stack AI chatbot by integrating a React frontend, Node.js backend, and Python ML inference service for real-time personality-aware conversations.}
+\resumeItem{Deployed an mBERT-based MBTI classifier (16 classes) achieving 0.81 validation AUC across multilingual datasets using TensorFlow SavedModel.}
+\resumeItem{Improved conversational relevance by integrating transformer-based emotion detection for sentiment-aware response adaptation.}
+\resumeItem{Containerized client, server, and ML services using Docker Compose, enabling modular orchestration and scalable deployment.}
+\resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{AgriConnect: AI-Powered Agricultural Marketplace \& Advisory Platform}
+    \href{https://github.com/aryankumar4848/AgriConnect}{\faIcon{external-link-alt}}
+    $|$ \emph{React, Node.js/Express, MongoDB, Razorpay, Docker, Prometheus}}{}
+    \resumeItemListStart
+      \resumeItem{Developed full-stack e-commerce platform for 40+ agricultural products (seeds, fertilizers) with Razorpay integration, achieving 100\% payment verification across 500+ simulated transactions.}
+      \resumeItem{Implemented AI-driven crop recommendation engine using image analysis and soil data, delivering personalized suggestions for 15+ crops with 95\% user satisfaction in beta testing.}
+      \resumeItem{Orchestrated monitoring stack with Prometheus, Filebeat, and Logstash, reducing MTTR by 75\% (from 20min to 5min) during load tests with 200+ concurrent users.}
+      \resumeItem{Engineered containerized deployment (client + server Dockerfiles), enabling one-command orchestration via docker-compose and zero-downtime updates.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+\resumeItem{
+\textbf{Languages:} Java, Python, JavaScript, SQL \\
+\textbf{Backend:} Spring Boot, Spring Cloud, Node.js, REST APIs, Hibernate \\
+\textbf{Databases:} PostgreSQL, MySQL, MongoDB \\
+\textbf{DevOps:} Docker, Git, GitHub Actions, Jenkins (basic) \\
+\textbf{Core Concepts:} DSA, OOPS, Concurrency, Microservices, Distributed Systems \\
+\textbf{OS \& Networking:} Process Management, Synchronization, TCP/IP, HTTP/HTTPS
+}
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS AND ACHIEVEMENTS-----------
+\section{Certifications And Achievements}
+\resumeSubHeadingListStart
+
+\resumeItem{
+\textbf{Research Paper Accepted (IEEE I3CTCON 2026)} — \textit{MBTI Cognitive Chatbot: Personality-Aware Conversational AI Architecture}. 
+Accepted for presentation at the IEEE International Conference for Convergence in Computing Technology (I3CTCON), Pune, India. Publication in IEEE Xplore pending.
+}
+
+\resumeItem{
+\textbf{Azure AZ-900} — In Progress
+}
+
+\resumeItem{
+\textbf{Solved 200+ DSA Problems} across LeetCode and GeeksforGeeks
+}
+
+\resumeSubHeadingListEnd
+
+\end{document}
+
