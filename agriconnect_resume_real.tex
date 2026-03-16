@@ -1,0 +1,97 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-3pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.12in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+%-------------------------------------------
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape ARYAN KUMAR} \\ \vspace{2pt}
+    \small 
+    \faPhone\ +91 99721 19604 $|$
+    \href{mailto:aryantk4848@gmail.com}{aryantk4848@gmail.com} $|$
+    \href{https://linkedin.com/in/aryan-tk/}{linkedin.com/in/aryan-tk} $|$
+    \href{https://github.com/aryankumar4848}{github.com/aryankumar4848}
+\end{center}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+  {\textbf{AgriConnect: Full-Stack Agricultural Marketplace}}
+  \href{https://github.com/aryankumar4848/AgriConnect}{\faIcon{external-link-alt}}
+  $|$ \emph{React (18 components), Node/Express, MongoDB (6 models), Razorpay, Docker (9 services)}}{}
+  \resumeItemListStart
+    \resumeItem{Catalog of 40 products (IDs 3001-3040) with 80 product images + 17 crop varieties; supports market, cart, checkout workflows.}
+    \resumeItem{Razorpay payment integration (create/verify links, mock mode) in production-ready server with signature validation.}
+    \resumeItem{Dockerized deployment: client/server + complete monitoring (Prometheus@9090 scrapes /metrics; Filebeat→Logstash→ELK logs).}
+    \resumeItem{17+ UI components (CropSuggestion AI, AdminPortal, Discussions realtime chat, Dashboard); 6 MongoDB models (User/Product/Seller/Cart/Crop/Message).}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}
+
